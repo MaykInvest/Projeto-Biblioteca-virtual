@@ -1,0 +1,131 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ========================================================================
+                     TEMA ESCURO (AZUL FECHADO) 
+===========================================================================*/
+
+[data-tema="escuro"] {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+[data-tema="escuro"] .cabecalho,
+[data-tema="escuro"] .rodape {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+/* TEMA CLARO (AZUL SUAVE) */
+[data-tema="claro"] {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+[data-tema="claro"] .cabecalho,
+[data-tema="claro"] .rodape {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+}
+/* ========================================================================
+                     TEMA ESCURO (AZUL FECHADO)   fim 
+===========================================================================*/
+
+/* ========================================================================
+                                 cabeçalho 
+===========================================================================*/
+header {
+    padding: 15px 0;
+    border-bottom: 1px solid;
+}
+
+header div {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div h1 {
+    font-size: 1.4rem;
+}
+
+.botao-tema {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #38bdf8;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* ========================================================================
+                                 cabeçalho  fim
+===========================================================================*/
+
+
+/* ========================================================================
+                                 main a pagina 
+===========================================================================*/
+main {
+    flex: 1; /* Faz o rodapé ficar sempre no fim da página */
+    padding: 40px 0;
+}
+
+/* Seção 1 da página  */
+
+.secao_principal {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.conteiner h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.conteiner p {
+    opacity: 0.8;
+}
+
+
+/* Shadow     */
+
+
+
+
+
+
+
+
+/* ========================================================================
+                                 main a pagina 
+===========================================================================*/
+
+
+
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    border-top: 1px solid;
+}

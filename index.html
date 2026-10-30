@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="escuro">
 
 <head>
   <meta charset="utf-8">
@@ -8,8 +8,12 @@
 
   <title>Minha Biblioteca</title>
 
-  <!-- O visual da página -->
+  <!-- CSS principal: modo escuro -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- CSS adicional: modo claro (começa desativado) -->
+  <link rel="stylesheet" href="claro.css" id="temaClaro" disabled>
+
   <!-- O script usa o Supabase para carregar e gravar os livros. -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js" defer></script>
@@ -28,6 +32,11 @@
       <span>Minha Biblioteca</span>
 
     </a>
+
+    <button class="botao-tema" id="botaoTema" type="button" aria-label="Ativar modo claro" title="Ativar modo claro">
+      <span id="iconeTema" aria-hidden="true">☀</span>
+      <span id="textoTema">Modo Claro</span>
+    </button>
 
     <form class="search" role="search" id="search-form">
       <label class="sr-only" for="search-input">Buscar por título ou autor</label>
@@ -242,6 +251,7 @@
 
           <button class="secondary-button" id="favorite-button" type="button">♡ Adicionar aos favoritos</button>
           <button class="secondary-button danger-button" id="delete-button" type="button">Excluir livro</button>
+
         </div>
 
         <p class="dialog-help" id="dialog-help">O PDF será aberto em uma nova aba.</p>
@@ -255,21 +265,29 @@
   <!-- ============ JANELA "ADICIONAR LIVRO" (formulário) ============
        Os campos PDF e capa recebem arquivos reais que serão enviados ao Supabase Storage. -->
   <dialog class="book-dialog" id="add-dialog" aria-labelledby="add-title">
+
     <form method="dialog"><button class="close-dialog" aria-label="Fechar formulário">×</button></form>
+
     <div class="add-form-wrap">
+
       <form class="add-form" id="add-form" novalidate>
+
         <p class="eyebrow">NOVO LIVRO</p>
+
         <h2 id="add-title">Adicionar à estante</h2>
 
         <label>Título
           <input name="titulo" type="text" autocomplete="off">
         </label>
+
         <label>Autor
           <input name="autor" type="text" autocomplete="off">
         </label>
+
         <label>Categoria
           <!-- As opções precisam ser IGUAIS aos data-category dos botões de categoria -->
           <select name="categoria">
+
             <option value="">Escolha uma categoria...</option>
             <option>Autoconhecimento</option>
             <option>Aventura</option>
@@ -279,26 +297,37 @@
             <option>Infantojuvenil</option>
             <option>Romance</option>
             <option>Terror</option>
+
           </select>
         </label>
+
         <label>Sinopse
           <textarea name="sinopse" rows="4"></textarea>
         </label>
+
         <label>Arquivo PDF
           <input name="pdf" type="file" accept="application/pdf,.pdf" required>
         </label>
+
         <label>Imagem da capa
           <input name="capa" type="file" accept="image/*" required>
         </label>
 
         <p class="form-message" id="add-message" role="alert"></p>
+
         <div class="dialog-actions">
+
           <button class="primary-button" type="submit">Adicionar livro</button>
           <button class="secondary-button" type="button" id="cancel-add">Cancelar</button>
+
         </div>
+
       </form>
+
     </div>
+
   </dialog>
+
 </body>
 
 </html>

@@ -769,3 +769,40 @@ carregarLivros().catch(erro => {
     erro
   );
 });
+
+// ============================================================
+// BOTÃO DE MODO CLARO E MODO ESCURO
+// ============================================================
+
+const botaoTema = document.getElementById("botaoTema");
+const iconeTema = document.getElementById("iconeTema");
+const textoTema = document.getElementById("textoTema");
+
+const html = document.documentElement;
+
+if (botaoTema && iconeTema && textoTema) {
+
+    botaoTema.addEventListener("click", () => {
+
+        const modoEscuro = html.getAttribute("data-tema") === "escuro";
+
+        if (modoEscuro) {
+
+            html.setAttribute("data-tema", "claro");
+
+            iconeTema.textContent = "☾";
+            textoTema.textContent = "Modo Escuro";
+
+            botaoTema.setAttribute("aria-label", "Ativar modo escuro");
+
+        } else {
+
+            html.setAttribute("data-tema", "escuro");
+
+            iconeTema.textContent = "☀";
+            textoTema.textContent = "Modo Claro";
+
+            botaoTema.setAttribute("aria-label", "Ativar modo claro");
+        }
+    });
+}

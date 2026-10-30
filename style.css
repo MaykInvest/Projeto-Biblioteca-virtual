@@ -859,3 +859,90 @@ h1 {
     animation-duration: .01ms !important;
   }
 }
+
+/* ===== BOTÃO DE ALTERNAR TEMA ===== */
+
+.botao-tema {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    color: var(--ink);
+    background: transparent;
+
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+
+    font-size: 0.85rem;
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: background .2s, color .2s;
+}
+
+.botao-tema:hover {
+    background: #ffffff12;
+}
+
+.botao-tema span:first-child {
+    font-size: 19px;
+}
+
+
+/* ============================================================
+   MINHA BIBLIOTECA — MODO CLARO
+   ============================================================ */
+
+html[data-tema="claro"] {
+
+    /* CORES PRINCIPAIS */
+    --ink: #29241e;
+    --muted: #71675c;
+    --gold: #9a6b32;
+    --cream: #fffaf3;
+}
+
+/* FUNDO GERAL */
+html[data-tema="claro"] body {
+    color: var(--ink);
+    background: #f5f0e8;
+}
+
+/* CABEÇALHO */
+html[data-tema="claro"] .topbar {
+    background: #fffaf3;
+    border-bottom: 1px solid #e5d8c6;
+}
+
+html[data-tema="claro"] .brand {
+    color: #29241e;
+}
+
+html[data-tema="claro"] .brand-icon {
+    color: #9a6b32;
+}
+
+/* PESQUISA */
+html[data-tema="claro"] .topbar .search {
+    background: #ffffff !important;
+    border: 1px solid #d8c9b7 !important;
+}
+
+html[data-tema="claro"] .topbar .search input {
+    background: #ffffff !important;
+    color: #29241e !important;
+}
+
+html[data-tema="claro"] .topbar .search input::placeholder {
+    color: #82776b;
+    opacity: 1;
+}
+
+html[data-tema="claro"] .topbar .search button {
+    background: #ffffff !important;
+    color: #29241e !important;
+}
